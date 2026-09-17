@@ -8,13 +8,20 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
+
+    boolean produccion = false;
+    //boolean produccion = false;
+
     @Override
     public void start(Stage stage) throws IOException {
-        /*FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();*/
-        v_Login.getInstance(stage);
+        if(produccion) {
+            v_Login.getInstance(stage);
+        }else{
+            test();
+        }
+    }
+
+    private void test(){
+        System.out.println("Corriendo test");
     }
 }
