@@ -106,17 +106,17 @@ public class Mascota {
     //TO STRING
     @Override
     public String toString() {
-        return "Mascota{" +
-                "id=" + id +
-                ", alias='" + alias + '\'' +
-                ", colaborador='" + colaborador + '\'' +
-                ", veterinario='" + veterinario + '\'' +
-                ", historiaClinica='" + historiaClinica + '\'' +
-                ", especie=" + especie +
-                ", pesoInicial=" + pesoInicial +
-                ", pesoActual=" + pesoActual +
-                ", fechaIngreso='" + fechaIngreso + '\'' +
-                '}';
+        return "Mascota {\n" +
+                "\tid=" + id + ",\n" +
+                "\talias='" + alias + "',\n" +
+                "\tespecie=" + especie + ",\n" +
+                "\tveterinario='" + veterinario + "',\n" +
+                "\tcolaborador='" + colaborador + "',\n" +
+                "\tpesoInicial=" + pesoInicial + " kg,\n" +
+                "\tpesoActual=" + pesoActual + " kg,\n" +
+                "\tfechaIngreso=" + fechaIngreso + ",\n" +
+                "\thistoriaClinica='" + historiaClinica + "'\n" +
+                "}";
     }
 };
 
