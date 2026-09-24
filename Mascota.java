@@ -1,21 +1,17 @@
 package com.example.santab;
 
+import java.time.LocalDate;
 public class Mascota {
     private String id;
     private String alias;
     private Usuario colaborador;
-    private Usuario benefactor;
     private String veterinario;
     private String historiaClinica;
     private Especie especie;
     public enum Especie{PERRO, GATO, OTRO}
     private double pesoInicial;
     private double pesoActual;
-    private String fechaIngreso;
-
-    public Mascota() {
-        this.benefactor = null;
-    }
+    private LocalDate fechaIngreso;
 
     public String getId() {
         return id;
@@ -41,13 +37,6 @@ public class Mascota {
         this.colaborador = colaborador;
     }
 
-    public Usuario getBenefactor() {
-        return benefactor;
-    }
-
-    public void setBenefactor(Usuario benefactor) {
-        this.benefactor = benefactor;
-    }
 
     public String getVeterinario() {
         return veterinario;
@@ -89,11 +78,11 @@ public class Mascota {
         this.pesoActual = pesoActual;
     }
 
-    public String getFechaIngreso() {
+    public LocalDate getFechaIngreso() {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(String fechaIngreso) {
+    public void setFechaIngreso(LocalDate fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
 }

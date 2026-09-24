@@ -1,11 +1,18 @@
 package com.example.santab;
 
+import java.security.SecureRandom;
+
 public class Util {
 
-    private static int contador = 0;
+    public static String getUUid(){
+        SecureRandom random = new SecureRandom();
+        StringBuilder token = new StringBuilder();
+        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-    public static String getId() {
-        contador++;
-        return String.valueOf(contador);
+        for(int i = 0; i < 20; i++) {
+            int index = random.nextInt(chars.length());
+            token.append(chars.charAt(index));
+        }
+        return token.toString();
     }
 }

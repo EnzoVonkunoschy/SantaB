@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class HelloApplication extends Application {
 
@@ -28,7 +29,7 @@ public class HelloApplication extends Application {
         Mascota mascota1 = new Mascota();
         Usuario colaborador = new Usuario("Messi", null, "261123432", "colaborador");
 
-        mascota1.setId(Util.getId());
+        mascota1.setId(Util.getUUid());
         mascota1.setAlias("Gary");
         mascota1.setColaborador(colaborador);
         mascota1.setVeterinario("Doctor Calamardo");
@@ -36,12 +37,11 @@ public class HelloApplication extends Application {
         mascota1.setEspecie(Mascota.Especie.GATO);
         mascota1.setPesoInicial(6.2);
         mascota1.setPesoActual(7.1);
-        mascota1.setFechaIngreso("21-09-2026");
+        mascota1.setFechaIngreso(LocalDate.now());
 
         System.out.println("ID Mascota: " + mascota1.getId());
         System.out.println("Alias: " + mascota1.getAlias());
         System.out.println("Colaborador: " + mascota1.getColaborador().getNombre());
-        System.out.println("Benefactor: " + mascota1.getBenefactor());
         System.out.println("Veterinario: " + mascota1.getVeterinario());
         System.out.println("Historia Clínica: " + mascota1.getHistoriaClinica());
         System.out.println("Especie: " + mascota1.getEspecie());
