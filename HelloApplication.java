@@ -48,6 +48,18 @@ public class HelloApplication extends Application {
         System.out.println("Peso Inicial: " + mascota1.getPesoInicial());
         System.out.println("Peso Actual: " + mascota1.getPesoActual());
         System.out.println("Fecha Ingreso: " + mascota1.getFechaIngreso());
+
+
+        System.out.println("--");
+        Seguridad seguridad = Seguridad.getInstancia();
+        Controlador controlador = Controlador.getInstancia();
+        Modelo modelo = Modelo.getInstancia();
+
+        System.out.println("Instancia de Seguridad: " + seguridad);
+        System.out.println("Instancia de Controlador: " + controlador);
+        System.out.println("Instancia de Modelo: " + modelo);
+
+
     }
 
 
