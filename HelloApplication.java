@@ -26,8 +26,8 @@ public class HelloApplication extends Application {
         System.out.println("Corriendo test");
         Mascota m1 = new Mascota(
                 "Rambo",
+                "Dra. Martinez",
                 null,
-                "Dra. Martínez",
                 "rescatado ruta 40",
                 8.5,
                 9.0,

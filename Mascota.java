@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class Mascota  implements Serializable {
     private String id;
     private String alias;
+    private Colaborador colaborador;
     private String veterinario;
     private String historiaClinica;
     private double PesoInicial;
@@ -18,10 +19,11 @@ public class Mascota  implements Serializable {
 
 
     private TipoAnimal tipo;
-    public  Mascota(String id, String alias, String veterinario, String historiaClinica,double PesoInicial,double PesoActual,String fechIngreso,TipoAnimal tipo)
+    public  Mascota( String alias, String veterinario, Colaborador colaborador,String historiaClinica,double PesoInicial,double PesoActual,String fechIngreso,TipoAnimal tipo)
     {
         this.id = Util.getUUid();
         this.alias = alias;
+        this.colaborador = colaborador;
         this.veterinario = veterinario;
         this.historiaClinica = historiaClinica;
         this.PesoInicial = PesoInicial;
@@ -34,6 +36,8 @@ public class Mascota  implements Serializable {
     public String getId() { return id; }
 
     public String getAlias() { return alias; }
+    public Colaborador getColaborador() {
+        return colaborador;}
 
     public String getVeterinario() { return veterinario; }
 
@@ -51,6 +55,9 @@ public class Mascota  implements Serializable {
     public void setAlias(String alias) { this.alias = alias; }
 
     public void setVeterinario(String veterinario) { this.veterinario = veterinario; }
+    public void setColaborador(Colaborador colaborador) {
+        this.colaborador = colaborador;
+    }
 
     public void setId(String id) { this.id = id; }
 
@@ -69,6 +76,7 @@ public class Mascota  implements Serializable {
         return "Mascota{" +
                 "id='" + id + '\'' +
                 ", alias='" + alias + '\'' +
+                ", colaborador=" + colaborador +
                 ", veterinario='" + veterinario + '\'' +
                 ", historiaClinica='" + historiaClinica + '\'' +
                 ", PesoInicial=" + PesoInicial +
