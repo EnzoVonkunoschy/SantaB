@@ -5,13 +5,15 @@ import java.io.Serializable;
 public class Usuario implements Serializable {
 
     // Atributos privados
+    private String id;
     private String nombre;
     private String clave;
     private String mobil;
     private String rol;
 
     // Constructor
-    public Usuario(String nombre, String clave, String mobil, String rol) {
+    public Usuario(String id,String nombre, String clave, String mobil, String rol) {
+        this.id =Util.getUUid();
         this.nombre = nombre;
         this.clave = clave;
         this.mobil = mobil;
@@ -22,7 +24,7 @@ public class Usuario implements Serializable {
     public String getNombre() {
         return nombre;
     }
-
+    public String getId() { return id; }
     public String getClave() {
         return clave;
     }
@@ -36,6 +38,8 @@ public class Usuario implements Serializable {
     }
 
     // Setters
+    public void setId(String id) { this.id = id; }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }

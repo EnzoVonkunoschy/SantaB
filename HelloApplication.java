@@ -24,39 +24,43 @@ public class HelloApplication extends Application {
     }
 
     private void test(){
-        System.out.println("Corriendo test");
-        Mascota m1 = new Mascota(
-                "Rambo",
-                "Dra. Martinez",
-                null,
-                "rescatado ruta 40",
-                8.5,
-                9.0,
-                "19/09/2026",
-                Mascota.TipoAnimal.Perro
-        );
+        System.out.println("Test");
+        Mascota m1 = new Mascota("Rambo", "Dra. Martinez", null, "rescatado ruta 40", 8.5, 9.0, "17/09/2026", Mascota.TipoAnimal.Perro);
 
-        System.out.println("--- PRUEBA GETTERS ---\n");
-        System.out.println("ID autogenerado (Util): " + m1.getId());
-        System.out.println("Alias: " + m1.getAlias());
-        System.out.println("Veterinario: " + m1.getVeterinario());
-        System.out.println("Historia Clínica: " + m1.getHistoriaClinica());
-        System.out.println("Peso Inicial: " + m1.getPesoInicial() + " kg");
-        System.out.println("Peso Actual: " + m1.getPesoActual() + " kg");
-        System.out.println("Fecha Ingreso: " + m1.getFechIngreso());
-        System.out.println("Tipo: " + m1.getTipo());
 
-        m1.setAlias("RamboLa2");//JAJAJ  no sabia q ponerle
-        m1.setPesoActual(10.4);
-        m1.setHistoriaClinica("Recuperado, desparasitado y castrado");
+        Usuario u1 = new Usuario("", "Admin", "1234", "261111155", "Administrador");
+        Usuario u2 = new Usuario("", "Admin", "1234", "261111155", "Administrador");
+        Usuario u3 = new Usuario("", "Invitado", "0000", "261000000", "Lector");
 
-        System.out.println("\n--- PRUEBA SETTERS ---\n");
-        System.out.println("Nuevo Alias: " + m1.getAlias());
-        System.out.println("Nuevo Peso Actual: " + m1.getPesoActual() + " kg");
-        System.out.println("Nueva Historia Clínica: " + m1.getHistoriaClinica());
-        System.out.println(" ");
-        System.out.println("Instancia de Seguridad: " + Seguridad.getInstance());
-        System.out.println("Instancia de Controlador: " + Controlador.getInstance());
-        System.out.println("Instancia de Modelo: " + Modelo.getInstance());
+        System.out.println( "Getters y setters de mascota\n");
+        System.out.println("Mascota ID autogenerado: " + m1.getId());
+        System.out.println("Mascota Alias Original: " + m1.getAlias());
+        m1.setAlias("Rambo: First Blood Part II");// jajaj lo mejore
+        System.out.println("Mascota Nuevo Alias: " + m1.getAlias());
+
+        System.out.println();
+
+        System.out.println( "Getters y setters de Usuario\n");
+        System.out.println("Usuario ID autogenerado: " + u1.getId());
+        System.out.println("Usuario Nombre Original: " + u1.getNombre());
+        u1.setNombre("SuperAdmin");
+        System.out.println("Usuario Nuevo Nombre: " + u1.getNombre());
+        u1.setNombre("Admin");
+
+        System.out.println("\ntostring de mascota y despues de usuari\n");
+        // Prueba de toString en ambas clases
+        System.out.println(m1.toString());
+        System.out.println(u1.toString());
+
+
+        System.out.println("\nprueba de las instancias seguridad, controlador y modelo\n");
+        System.out.println("Seguridad: " + Seguridad.getInstance());
+        System.out.println("Controlador: " + Controlador.getInstance());
+        System.out.println("Modelo: " + Modelo.getInstance());
+        System.out.println("\nprueba de equals\n");
+
+        System.out.println("¿u1 es igual a u2?: " + u1.equals(u2));
+        System.out.println("¿U1 es igual a u3?: " + u1.equals(u3));
+
     }
 }
