@@ -53,5 +53,9 @@ public class HelloApplication extends Application {
         System.out.println("Nuevo Alias: " + m1.getAlias());
         System.out.println("Nuevo Peso Actual: " + m1.getPesoActual() + " kg");
         System.out.println("Nueva Historia Clínica: " + m1.getHistoriaClinica());
+        System.out.println(" ");
+        System.out.println("Instancia de Seguridad: " + Seguridad.getInstance());
+        System.out.println("Instancia de Controlador: " + Controlador.getInstance());
+        System.out.println("Instancia de Modelo: " + Modelo.getInstance());
     }
 }
