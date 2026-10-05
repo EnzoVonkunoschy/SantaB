@@ -23,7 +23,7 @@ public class v_Login {
 
         btn.setOnAction(e -> {
             System.out.println("Acceso libre al sistema.");
-            v_Menu menu = v_Menu.getInstance(stage, new Usuario("Bart","1234","261-1-123456","admin"));
+            v_Menu menu = v_Menu.getInstance(stage, new Usuario("", "Bart", "1234", "261-1-123456", "admin"));
         });
 
 

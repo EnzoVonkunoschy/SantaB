@@ -1,18 +1,13 @@
 package com.example.santab;
 
 public class Controlador {
-
     private static Controlador instancia;
-
-    private Controlador(){
-
+    private Controlador() {
     }
-
-    public static Controlador getInstancia(){
-        if(instancia == null){
+    public static Controlador getInstance() {
+        if (instancia == null) {
             instancia = new Controlador();
         }
         return instancia;
     }
-
 }

@@ -4,14 +4,15 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import java.io.IOException;
 
 import java.io.IOException;
-import java.time.LocalDate;
 
 public class HelloApplication extends Application {
 
-    boolean produccion = false;
+    //boolean produccion = true;
     //boolean produccion = false;
+    boolean produccion = false;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -23,44 +24,43 @@ public class HelloApplication extends Application {
     }
 
     private void test(){
-        System.out.println("Corriendo test");
-
-        System.out.println("");
-        Mascota mascota1 = new Mascota();
-        Usuario colaborador = new Usuario("Messi", null, "261123432", "colaborador");
-
-        mascota1.setId(Util.getUUid());
-        mascota1.setAlias("Gary");
-        mascota1.setColaborador(colaborador);
-        mascota1.setVeterinario("Doctor Calamardo");
-        mascota1.setHistoriaClinica("Desconocido");
-        mascota1.setEspecie(Mascota.Especie.GATO);
-        mascota1.setPesoInicial(6.2);
-        mascota1.setPesoActual(7.1);
-        mascota1.setFechaIngreso(LocalDate.now());
-
-        System.out.println("ID Mascota: " + mascota1.getId());
-        System.out.println("Alias: " + mascota1.getAlias());
-        System.out.println("Colaborador: " + mascota1.getColaborador().getNombre());
-        System.out.println("Veterinario: " + mascota1.getVeterinario());
-        System.out.println("Historia Clínica: " + mascota1.getHistoriaClinica());
-        System.out.println("Especie: " + mascota1.getEspecie());
-        System.out.println("Peso Inicial: " + mascota1.getPesoInicial());
-        System.out.println("Peso Actual: " + mascota1.getPesoActual());
-        System.out.println("Fecha Ingreso: " + mascota1.getFechaIngreso());
+        System.out.println("Test");
+        Mascota m1 = new Mascota("Rambo", "Dra. Martinez", null, "rescatado ruta 40", 8.5, 9.0, "17/09/2026", Mascota.TipoAnimal.Perro);
 
 
-        System.out.println("--");
-        Seguridad seguridad = Seguridad.getInstancia();
-        Controlador controlador = Controlador.getInstancia();
-        Modelo modelo = Modelo.getInstancia();
+        Usuario u1 = new Usuario("", "Admin", "1234", "261111155", "Administrador");
+        Usuario u2 = new Usuario("", "Admin", "1234", "261111155", "Administrador");
+        Usuario u3 = new Usuario("", "Invitado", "0000", "261000000", "Lector");
 
-        System.out.println("Instancia de Seguridad: " + seguridad);
-        System.out.println("Instancia de Controlador: " + controlador);
-        System.out.println("Instancia de Modelo: " + modelo);
+        System.out.println( "Getters y setters de mascota\n");
+        System.out.println("Mascota ID autogenerado: " + m1.getId());
+        System.out.println("Mascota Alias Original: " + m1.getAlias());
+        m1.setAlias("Rambo: First Blood Part II");// jajaj lo mejore
+        System.out.println("Mascota Nuevo Alias: " + m1.getAlias());
 
+        System.out.println();
+
+        System.out.println( "Getters y setters de Usuario\n");
+        System.out.println("Usuario ID autogenerado: " + u1.getId());
+        System.out.println("Usuario Nombre Original: " + u1.getNombre());
+        u1.setNombre("SuperAdmin");
+        System.out.println("Usuario Nuevo Nombre: " + u1.getNombre());
+        u1.setNombre("Admin");
+
+        System.out.println("\ntostring de mascota y despues de usuari\n");
+        // Prueba de toString en ambas clases
+        System.out.println(m1.toString());
+        System.out.println(u1.toString());
+
+
+        System.out.println("\nprueba de las instancias seguridad, controlador y modelo\n");
+        System.out.println("Seguridad: " + Seguridad.getInstance());
+        System.out.println("Controlador: " + Controlador.getInstance());
+        System.out.println("Modelo: " + Modelo.getInstance());
+        System.out.println("\nprueba de equals\n");
+
+        System.out.println("¿u1 es igual a u2?: " + u1.equals(u2));
+        System.out.println("¿U1 es igual a u3?: " + u1.equals(u3));
 
     }
-
-
 }
