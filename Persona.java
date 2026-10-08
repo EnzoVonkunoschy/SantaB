@@ -22,7 +22,9 @@ public class Persona implements Serializable {
     public void setNombre(String nombre) { this.nombre = nombre; }
     public void agregarRol(Rol rol) { this.roles.add(rol); }
     public void removerRol(Rol rol) { this.roles.remove(rol); }
-
+    public List<Rol> getRoles(){
+        return roles;
+    };
 
     public <T extends Rol> Optional<T> getRol(Class<T> claseRol) {
 
