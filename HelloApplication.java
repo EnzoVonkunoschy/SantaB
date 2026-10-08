@@ -63,7 +63,7 @@ public class HelloApplication extends Application {
         System.out.println("¿U1 es igual a u3?: " + u1.equals(u3));
 
 
-        System.out.println("\nPersona y roles:\n");
+        System.out.println("\nPersona y roles (Patrón Role Object):\n");
 
         Persona p1 = new Persona("Dr. Roberto");
         Persona p2 = new Persona("Laura Martinez");
@@ -75,22 +75,18 @@ public class HelloApplication extends Application {
             @Override
             public String toString() { return "Colaborador{tipo='Voluntario de prueba'}"; }
         };
-
-        p1.setVeterinario(rolVet);
-        p2.setBenefactor(rolBen);
-        p3.setColaborador(rolColab);
-
-        System.out.println("Getters de P1 : " + p1.getVeterinario().getCedula());
-        System.out.println("Getters de P2 : " + p2.getBenefactor().getTipoAporte());
-        System.out.println("Getters de P3 : " + p3.getColaborador().toString());
-
-        System.out.println("¿P1 es Benefactor? " + (p1.getBenefactor() != null));
-
+        p1.agregarRol(rolVet);
+        p2.agregarRol(rolBen);
+        p3.agregarRol(rolColab);
+        System.out.print("Getters de P1 : ");
+        p1.getRol(Veterinario.class).ifPresent(v -> System.out.println(v.getCedula()));
+        System.out.print("Getters de P2 : ");
+        p2.getRol(Benefactor.class).ifPresent(b -> System.out.println(b.getTipoAporte()));
+        System.out.print("Getters de P3 : ");
+        p3.getRol(Colaborador.class).ifPresent(c -> System.out.println(c.toString()));
+        System.out.println("¿P1 es Benefactor? " + p1.tieneRol(Benefactor.class));
         System.out.println("\nPrueba toString():");
         System.out.println(p1.toString());
-        System.out.println(p2.toString());
-        System.out.println(p3.toString());
-        System.out.println("\nPrueba equals():");
         System.out.println("¿p1 es igual a p2?: " + p1.equals(p2));
         System.out.println("¿p1 es igual a sí mismo?: " + p1.equals(p1));
 

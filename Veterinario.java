@@ -1,7 +1,7 @@
 package com.example.santab;
 import java.io.Serializable;
 
-public class Veterinario implements Serializable {
+public class Veterinario extends Rol implements Serializable {
     private String cedula;
 
     public Veterinario(String cedula) { this.cedula = cedula; }

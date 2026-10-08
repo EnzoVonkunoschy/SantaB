@@ -1,7 +1,7 @@
 package com.example.santab;
 import java.io.Serializable;
 
-public class Benefactor implements Serializable {
+public class Benefactor extends Rol implements Serializable {
     private String tipoAporte;
 
     public Benefactor(String tipoAporte) { this.tipoAporte = tipoAporte; }
