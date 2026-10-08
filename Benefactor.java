@@ -1,12 +1,9 @@
 package com.example.santab;
 
-import java.time.LocalDate;
-
 public class Benefactor extends Rol {
-    private Double montoCuota;
+    private double montoCuota;
 
-    public Benefactor(LocalDate fechaInicio, boolean activo, double montoCuota) {
-        super(fechaInicio, activo);
+    public Benefactor(double montoCuota) {
         this.montoCuota = montoCuota;
     }
 

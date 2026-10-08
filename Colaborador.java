@@ -1,5 +1,19 @@
 package com.example.santab;
 
-import java.io.Serializable;
+public class Colaborador extends Rol {
+    private int horasDisponibles;
 
-public abstract class Colaborador implements Serializable {}
+    public Colaborador(int horasDisponibles) {
+        this.horasDisponibles = horasDisponibles;
+    }
+
+    // Getters
+    public int getHorasDisponibles() {
+        return horasDisponibles;
+    }
+
+    // Setters
+    public void setHorasDisponibles(int horasDisponibles) {
+        this.horasDisponibles = horasDisponibles;
+    }
+}

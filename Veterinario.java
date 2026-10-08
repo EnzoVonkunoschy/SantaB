@@ -1,12 +1,9 @@
 package com.example.santab;
 
-import java.time.LocalDate;
-
 public class Veterinario extends Rol {
     private String matriculaProfesional;
 
-    public Veterinario(LocalDate fechaInicio, boolean activo, String matriculaProfesional) {
-        super(fechaInicio, activo);
+    public Veterinario(String matriculaProfesional) {
         this.matriculaProfesional = matriculaProfesional;
     }
 
