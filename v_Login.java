@@ -12,8 +12,7 @@ public class v_Login {
 
     private static v_Login instance;
 
-
-    private v_Login(Stage stage){
+    private v_Login(Stage stage) {
 
         Button btn = new Button("Acceder");
         Label lbl = new Label("Login");
@@ -26,7 +25,6 @@ public class v_Login {
             v_Menu menu = v_Menu.getInstance(stage, new Usuario("", "Bart", "1234", "261-1-123456", "admin"));
         });
 
-
         Scene sce = new Scene(panel, 300, 300);
         stage.setScene(sce);
 
@@ -35,8 +33,8 @@ public class v_Login {
 
     };
 
-    public static v_Login getInstance(Stage stage){
-        if(instance == null){
+    public static v_Login getInstance(Stage stage) {
+        if (instance == null) {
             instance = new v_Login(stage);
 
         }
