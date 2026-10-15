@@ -16,4 +16,9 @@ public class Colaborador extends Rol {
     public void setHorasDisponibles(int horasDisponibles) {
         this.horasDisponibles = horasDisponibles;
     }
+
+    @Override
+    public String toString() {
+        return "Colaborador (Horas disp.: " + horasDisponibles + " hs)";
+    }
 }

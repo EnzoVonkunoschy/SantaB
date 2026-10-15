@@ -7,6 +7,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class HelloApplication extends Application {
@@ -167,5 +169,17 @@ public class HelloApplication extends Application {
         vet1.setMatriculaProfesional("MP-9999");
         System.out.println("Veterinario Nueva Matrícula: " + vet1.getMatriculaProfesional());
 
+
+        //INCREMENTO
+
+
+        System.out.println("\n--- Ejecucion del metodo inicio ---");
+
+        List<Persona> lista = Controlador.getInstance().inicio();
+        // prueba
+        System.out.println("\n--- Personas recuperadas de LocalStorage ---");
+        for (Persona persona : lista) {
+            System.out.println(persona);
+        }
     }
 }
