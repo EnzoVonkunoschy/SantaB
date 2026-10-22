@@ -20,4 +20,9 @@ public class Veterinario extends Rol {
     public void registrarAtencionClinica(String idMascota) {
         // Lógica médico-veterinaria
     }
+
+    @Override
+    public String toString() {
+        return "Veterinario (Matrícula: " + matriculaProfesional + ")";
+    }
 }

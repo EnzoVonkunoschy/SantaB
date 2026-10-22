@@ -1,14 +1,19 @@
 package com.example.santab;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class Persona {
+public class Persona implements Serializable {
     private String id;
     private String nombre;
     private String mobil;
     private final List<Rol> roles = new ArrayList<>();
+
+    //Linea agregada porq la IA me dijo q era para evitar el error
+    //local class incompatible: stream classdesc serialVersionUID = 3754831275183359290, local class serialVersionUID = 1
+    private static final long serialVersionUID = 1L;
 
     public Persona(String id, String nombre, String mobil) {
         this.id = Util.getUUid();
@@ -66,5 +71,10 @@ public class Persona {
 
     public boolean tieneRol(Class<? extends Rol> claseRol) {
         return roles.stream().anyMatch(claseRol::isInstance);
+    }
+
+    @Override
+    public String toString() {
+        return "Persona [ID=" + id + ", Nombre=" + nombre + ", Móvil=" + mobil + ", Roles=" + roles + "]";
     }
 }

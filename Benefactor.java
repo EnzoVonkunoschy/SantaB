@@ -21,4 +21,9 @@ public class Benefactor extends Rol {
         // Lógica de cobro o pasarela de pagos. Esto es algo que se debe de continuar
         // imagino.
     }
+
+    @Override
+    public String toString() {
+        return "Benefactor (Cuota: $" + montoCuota + ")";
+    }
 }
