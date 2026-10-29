@@ -73,10 +73,15 @@ public class HelloApplication extends Application {
         Persona per4 = new Persona("", "Tomas", "12314121");
         Persona per5 = new Persona(" ", "Luiz", "12345");
 
-        Veterinario vet1 = new Veterinario("123");
-        Veterinario vet2 = new Veterinario("1235");
-        Benefactor ben1 = new Benefactor(123);
-        Colaborador col1 = new Colaborador(44444);
+        //Veterinario vet1 = new Veterinario("123");
+        //Veterinario vet2 = new Veterinario("1235");
+        //Benefactor ben1 = new Benefactor(123);
+        //Colaborador col1 = new Colaborador(44444);
+
+        Veterinario vet1 = RolFactory.crear("VETERINARIO",new Object[] {"123"});
+        Veterinario vet2 = RolFactory.crear("VETERINARIO",new Object[] {"456"});
+        Benefactor ben1  = RolFactory.crear("BENEFACTOR" ,new Object[] {23});
+        Colaborador col1 = RolFactory.crear("COLABORADOR",new Object[] {44444});
 
         // Asignar roles a personas individulamente
         per1.agregarRol(vet1);
